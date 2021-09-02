@@ -2,13 +2,44 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 
+const LinkItens = (props:any)=>{
+  return(
+    <Text style={stylesLink.text}>{props.name}</Text>
+  );
+}
+
+const stylesLink = StyleSheet.create({
+  text:{
+    marginTop: 10,
+    color: '#4A4A4C',
+    fontSize: 13.71,
+
+  }
+});
+
 const LinksImportantes = ()=>{
   return(// O JSX ficará aqui
-    <View>
-      <Text> Meu primeiro componente</Text>
+    <View style={stylesLinksImportantes.container}>
+      <LinkItens name="Home"/>
+      <LinkItens name="Post"/>
+      <LinkItens name="Videos"/>
+      <LinkItens name="Photos"/>
+      <LinkItens name="Comunity"/>
     </View>
   );
 };
+
+const stylesLinksImportantes = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 40,
+    paddingVertical: 10,
+
+    borderBottomColor: "red",
+    borderBottomWidth: 1,
+  }
+});
 
 export default function App() {
   return (
@@ -27,7 +58,6 @@ export default function App() {
         
         <Image source={require("./src/assets/share.png")}></Image>
       </View>
-      <Text>Hello World</Text>
       <LinksImportantes />
       <StatusBar style="auto" />
     </View>
@@ -36,6 +66,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
   },
   header: {
     minHeight: 93,
