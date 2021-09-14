@@ -10,7 +10,7 @@ const LinkItens = (props:any)=>{
   
   const stylesLink = StyleSheet.create({
     text:{
-      marginTop: 10,
+      marginTop: 20,
       color: '#4A4A4C',
       fontSize: 13.71,
   
@@ -36,7 +36,7 @@ const LinkItens = (props:any)=>{
       paddingHorizontal: 40,
       paddingVertical: 10,
   
-      borderBottomColor: "red",
+      borderBottomColor: "#F0F0F0",
       borderBottomWidth: 1,
     }
   });
