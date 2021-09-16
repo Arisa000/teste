@@ -4,6 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 
 import {stylesLink, stylesLinksImportantes, styles} from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import { StackNavigatorParamList } from '../../../types';
 
 const LinkItens = (props:any)=>{
     return(
@@ -25,8 +27,14 @@ const LinkItens = (props:any)=>{
     );
   };
   
+type HomeProps = NativeStackNavigationProp<StackNavigatorParamList, "Home">;
   
 const Home = () => {
+
+  const navigation = useNavigation<HomeProps>();
+  function irParaTelaLogin(){
+    navigation.navigate('Login');
+  }
     return(
         <View style={styles.container}>
       <View style={styles.header}>
@@ -47,7 +55,7 @@ const Home = () => {
       <StatusBar style="auto" />
 
       <View style={styles.conteudoFacebook}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={irParaTelaLogin}>
           <Text style={styles.buttonText}>Ir para segunda tela</Text>
         </TouchableOpacity>
       </View>
