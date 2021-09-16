@@ -24,7 +24,6 @@ const Login = () => {
                 secureTextEntry = {true}
                 style={styles.textInput}>
             </TextInput>
-
         </View>
     );
 }
