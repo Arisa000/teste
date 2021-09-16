@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { TouchableOpacity, Text, View, Image, TextInput, TouchableOpacityBase } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 import {stylesLink, stylesLinksImportantes, styles} from './styles';
+import {useNavigation} from '@react-navigation/native';
+
 const LinkItens = (props:any)=>{
     return(
       <Text style={stylesLink.text}>{props.name}</Text>
@@ -43,6 +45,12 @@ const Home = () => {
       </View>
       <LinksImportantes />
       <StatusBar style="auto" />
+
+      <View style={styles.conteudoFacebook}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Ir para segunda tela</Text>
+        </TouchableOpacity>
+      </View>
     </View>
     
     );
