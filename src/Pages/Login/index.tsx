@@ -1,8 +1,18 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import {styles} from './styles';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import { StackNavigatorParamList } from '../../../types';
 
-
+type LoginProps = NativeStackNavigationProp<StackNavigatorParamList, "Login">;
+ 
 const Login = () => {
+
+    const navigation = useNavigation<LoginProps>();
+        function irParaTelaHome(){
+            navigation.navigate('Home');
+        }
     return(
         <View style={styles.container}>
             <View style={styles.login}>
@@ -24,43 +34,15 @@ const Login = () => {
                 secureTextEntry = {true}
                 style={styles.textInput}>
             </TextInput>
+
+            <TouchableOpacity style={styles.btn} onPress={irParaTelaHome}>
+                <Text style={styles.btnText}>Log In</Text>
+            </TouchableOpacity>
+
+            <Text style={styles.underline}>Sign Up for FaceBook</Text>
         </View>
     );
 }
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#4369B0',
-    },
-    login: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 81,
-    },
-    icon: {
-        width: 50,
-        height: 50,
-        right: 25,
 
-    },
-    textInput: {
-        color: 'black',
-        fontFamily: 'Roboto',
-        fontSize: 16,
-        marginTop: 31,
-        padding: 10,
-        width: 300,
-        backgroundColor: '#FFFFFF',
-        
-    },
-    text: {
-        fontFamily: 'Roboto',
-        fontWeight: 'bold',
-        fontSize: 42.1053,
-        color: '#FFFFFF',
-    },
-})
 
 export default Login;
