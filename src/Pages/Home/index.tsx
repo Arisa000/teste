@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, Image, TextInput, TouchableOpacityBase } from 'react-native';
+import { TouchableOpacity, Text, View, Image, TextInput, ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 import {stylesLink, stylesLinksImportantes, styles} from './styles';
@@ -54,13 +54,17 @@ const Home = () => {
       </View>
       <LinksImportantes />
       <StatusBar style="auto" />
-      <Post />
 
       <View style={styles.conteudoFacebook}>
        <TouchableOpacity style={styles.button} onPress={irParaTelaLogin}>
           <Text style={styles.buttonText}>Learn More</Text>
         </TouchableOpacity>
       </View>
+      
+      <ScrollView>
+        <Post />
+      </ScrollView>
+
     </View>
     
     );

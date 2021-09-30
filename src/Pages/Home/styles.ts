@@ -59,9 +59,8 @@ export const styles = StyleSheet.create({
     conteudoFacebook: {
         flex: 1,
         justifyContent: 'flex-end',
-        paddingVertical: 40,
     },
     buttonText: {
-        color: 'white',
+        color: '#F5FFFF',
     },
 });

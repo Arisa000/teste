@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import {styles} from './styles';
 import {useNavigation} from '@react-navigation/native';
@@ -13,6 +13,8 @@ const Login = () => {
         function irParaTelaHome(){
             navigation.navigate('Home');
         }
+    const [myText, setMyText] = useState('');
+
     return(
         <View style={styles.container}>
             <View style={styles.login}>
@@ -25,7 +27,9 @@ const Login = () => {
             <TextInput 
                 placeholder="Email" 
                 placeholderTextColor="#A19FA1"
-                style={styles.textInput}>
+                style={styles.textInput}
+                onChangeText = {e => setMyText(e)}>
+                <Text>{myText}</Text>
             </TextInput>
             
             <TextInput 

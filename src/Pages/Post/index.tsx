@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, View, Image, StyleSheet } from 'react-native';
 
 const Post = ()=>{
     return(
@@ -60,6 +60,21 @@ const Post = ()=>{
                     <Text>Compartilhar</Text>
                 </View>
                 
+            </View>
+            <View style={styles.footerPost}>
+                <TouchableOpacity style={styles.btnLM}>
+                    <Text style = {styles.LMText}>Learn More</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnMS}>
+                    <Image style = {{width: 16, height: 16}}
+                    source = {require('../../assets/mensagem.png')}>
+                    </Image>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn3P}>
+                    <Image style = {{width: 3, height: 16}}
+                    source = {require('../../assets/3pontos.png')}>
+                    </Image>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -126,7 +141,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginHorizontal: 20,
-        marginTop: 10,
+        marginVertical: 20,
     },
     linksShareBloc:{
         flexDirection: 'row',
@@ -136,4 +151,36 @@ const styles = StyleSheet.create({
         width: 18,
         height: 18,
     },
+    footerPost:{
+        height: 43,
+        flexDirection: 'row',
+    },
+    btnLM:{
+        flex: 6,
+        backgroundColor: '#3D7BE2',
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    btnMS:{
+        flex: 2,
+        marginLeft: 10,
+        backgroundColor: '#3D7BE2',
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    btn3P:{
+        flex: 2,
+        marginLeft: 10,
+        borderWidth: 2,
+        borderColor: '#3D7BE2',
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    LMText:{
+        color: '#FDF7FD',
+        fontSize: 16,
+    }
 });
